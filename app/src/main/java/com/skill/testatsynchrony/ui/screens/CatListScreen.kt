@@ -45,10 +45,7 @@ fun CatList() {
     val lazyListState = rememberLazyListState()
 
     LaunchedEffect(Unit) {
-        Log.d("kajal", "LaunchedEffect bef: ")
         viewModel.getCats(lazyListState)
-        Log.d("kajal", "LaunchedEffect aft: ")
-
     }
 
     LazyColumn(

@@ -21,16 +21,10 @@ class CatViewModel : ViewModel() {
     fun getCats(lazyListState: LazyListState) {
         viewModelScope.launch {
             try {
-//                if (lazyListState.layoutInfo.visibleItemsInfo.lastOrNull()?.index ==
-                //                lazyListState.layoutInfo.totalItemsCount - 1) {
-
                 val response = repository.getCats(page = currentPage)
                 Log.d("Test", "getCats:response: $response ")
-                _catList.value += response
-//                _catList.update { response }
-                currentPage++
-                Log.d("kajal", "getCats: page: $currentPage")
-//            }
+//                _catList.value += response
+                _catList.update { response }
             } catch (e: Exception) {
                 Log.d("Test", "getCats: exception: $e")
             }
