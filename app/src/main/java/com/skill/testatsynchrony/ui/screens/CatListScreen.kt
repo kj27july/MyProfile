@@ -51,7 +51,7 @@ fun CatList() {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(10.dp),
+            .padding( top = 60.dp),
         state = lazyListState
     ) {
         Log.d("kajal", "state: ")
